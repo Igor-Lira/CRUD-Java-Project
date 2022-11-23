@@ -1,9 +1,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
-	<header>
+	<head>
 		<title> List Customers </title>
-	</header>
+		<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" />
+	</head>
 	<body>
 		<div id="wrapper">
 			<div id="header">
