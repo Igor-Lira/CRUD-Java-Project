@@ -1,4 +1,4 @@
-package igor.service;
+package igor.springdemo.service;
 
 import java.util.List;
 
@@ -20,6 +20,12 @@ public class CustomerServiceImpl implements CustomerService {
 	@Transactional
 	public List<Customer> getCustomers() {
 		return customerDAO.getCustomers();
+	}
+
+	@Override
+	@Transactional
+	public void saveCustomer(Customer theCustomer) {
+		customerDAO.saveCustomer(theCustomer);
 	}
 
 }
