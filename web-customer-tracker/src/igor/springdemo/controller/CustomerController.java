@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import igor.springdemo.dao.CustomerDAO;
+import igor.service.CustomerService;
 import igor.springdemo.entity.Customer;
 
 @Controller
@@ -15,11 +15,11 @@ import igor.springdemo.entity.Customer;
 public class CustomerController {
 
 	@Autowired
-	private CustomerDAO customerDAO;
+	private CustomerService custumerService;
 	
 	@RequestMapping("/list")
 	public String listCustomers(Model theModel) {
-		List<Customer> theCustomers = customerDAO.getCustomers();
+		List<Customer> theCustomers = custumerService.getCustomers();
 		theModel.addAttribute("customers", theCustomers);
 		return "list-customers";
 	}
