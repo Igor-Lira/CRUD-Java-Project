@@ -1,0 +1,8 @@
+docker network create foo
+
+docker build -t db-img .
+docker run --network=foo --name db-container -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=web_customer_tracker -e MYSQL_PASSWORD=root -h "0.0.0.0" db-img
+
+
+docker build -t crud-app .
+docker run --network=foo --name crud-app-container -p 8080:8080 -t -d crud-app
